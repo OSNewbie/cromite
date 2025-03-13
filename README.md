@@ -5,80 +5,78 @@
 
 [![Build Cromite](https://github.com/uazo/cromite/actions/workflows/build_cromite.yaml/badge.svg)](https://github.com/uazo/cromite/actions/workflows/build_cromite.yaml)
 
-# Cromite (a Bromite fork) - Take back your browser
+# Cromite (一个Bromite的分支) - 夺回你的浏览器
 
 <a href="https://www.cromite.org">
   <img title="Cromite - take back your browser!" src="https://www.cromite.org/app_icon.png" width="96" alt="Bromite" />
 </a>
 <br>
 
-Cromite is a [Chromium](https://www.chromium.org/Home) fork based on [Bromite](https://github.com/bromite/bromite) with built-in support for ad blocking and an eye for privacy.
+Cromite是一个 [Chromium](https://www.chromium.org/Home) 基于的分支 [Bromite](https://github.com/bromite/bromite) 内置支持广告拦截，并关注隐私。
 
-Cromite is available for Android arm64-v8a, arm32-v7a and x86_64, Oreo and above (Minimum v8.0, API level 26), Windows and Linux 64bit.
-
+Cromite适用于Android arm64-v8a、arm32-v7a和x86_64，Oreo及以上版本（最低v8.0，API级别26），Windows和Linux 64位。
 # Goals
+Cromite的目标是：
+- 限制浏览器内置的可用于跟踪用户习惯的平台功能，如果技术上不可行，则禁用这些功能，并由用户选择是否重新启用它们。
+- 限制浏览器与其制造商之间的紧密集成。
+- 不让csagan5在Bromite上所做的优秀研究工作被遗忘。
 
-Cromite's goal is to
-- limit the features built into the browser that can be used as a platform for tracking users' habits, and, if it is not technically possible, disable them and leave it up to the user to choose whether to re-enable them
-- limit the close integration between the browser and its manufacturer
-- not let the excellent research work done by csagan5 with Bromite be lost
+此外，Cromite希望促进与其他非营利、开源浏览器的更大集成，鼓励与他人的更紧密合作，并尝试在它们达到适当的成熟度后直接将其集成到Chromium中。
 
-In addition, Cromite would like to promote greater integration with other non-profit, open source browsers, encouraging closer collaboration with others, and attempt to integrate them directly into Chromium once they have reached an appropriate level of maturity.
+# 隐私限制
 
-# Privacy limitations
+Cromite的隐私功能，包括反指纹缓解（并不全面）， **不应被视为对记者和生活在自由受限国家的人们有用。**, 请查看 [Tor Browser](https://www.torproject.org/download/) 在这种情况下（最好使用桌面版本）。
+请注意，该项目并非没有错误，改变浏览器的行为可能是有风险的，并且并非没有问题。
 
-Cromite's privacy features, including anti-fingerprinting mitigations (which are not comprehensive), **are not to be considered useful for journalists and people living in countries with freedom limitations**, please look at [Tor Browser](https://www.torproject.org/download/) in such cases (better to use the desktop version).
-Please note that this project is not free of bugs and that changing the behaviour of a browser can be risky and not without problems.
+# 文档
+- [隐私政策](https://github.com/uazo/cromite/blob/master/docs/PRIVACY_POLICY.md)
+- [功能](https://github.com/uazo/cromite/blob/master/docs/FEATURES.md)
+- [常见问题](https://github.com/uazo/cromite/blob/master/docs/FAQ.md)
+- [如何构建](https://github.com/uazo/cromite/blob/master/docs/HOW_TO_BUILD.md)
+- [补丁列表](https://github.com/uazo/cromite/blob/master/docs/PATCHES.md)
 
-# Docs
-- [Privacy Policy](https://github.com/uazo/cromite/blob/master/docs/PRIVACY_POLICY.md)
-- [Features](https://github.com/uazo/cromite/blob/master/docs/FEATURES.md)
-- [Faqs](https://github.com/uazo/cromite/blob/master/docs/FAQ.md)
-- [How to build](https://github.com/uazo/cromite/blob/master/docs/HOW_TO_BUILD.md)
-- [Patch list](https://github.com/uazo/cromite/blob/master/docs/PATCHES.md)
+# 发布
 
-# Releases
+所有构建版本可作为 [releases](https://github.com/uazo/cromite/releases).
 
-All built versions are available as [releases](https://github.com/uazo/cromite/releases).
+Cromite目前为ARM、ARM64、Android x86、Windows x64和Linux构建。
 
-Cromite is currently built for ARM, ARM64, Android x86, Windows x64 and Linux.
+每个发布将包含以下文件：
 
-The following files will be present for each release:
-
-#### Cromite apk for android:
+#### Android的Cromite apk:
 - [arm64_ChromePublic.apk](https://github.com/uazo/cromite/releases/latest/download/arm64_ChromePublic.apk)
 - [arm_ChromePublic.apk](https://github.com/uazo/cromite/releases/latest/download/arm_ChromePublic.apk)
 - [x64_ChromePublic.apk](https://github.com/uazo/cromite/releases/latest/download/x64_ChromePublic.apk)
 
-#### Linux package:
+#### Linux包:
 - [chrome-lin64.tar.gz](https://github.com/uazo/cromite/releases/latest/download/chrome-lin64.tar.gz)
 
-#### Windows package:
+#### Windows 安装包:
 - [chrome-win.zip](https://github.com/uazo/cromite/releases/latest/download/chrome-win.zip)
 
-#### Debugging symbols and proguard file for java stacktrace deobfuscation
+#### 用于Java堆栈跟踪去混淆的调试符号和proguard文件
 - x64_ChromePublic.apk.mapping
 - arm64_ChromePublic.apk.mapping
 - arm64_symbols.zip
 
-#### Build time analysis file:
+#### 构建时间分析文件：
 - arm64_ninja_log_trace.html
 
-#### Chrlauncher autoupdate file:
+#### Chrlauncher自动更新文件：
 - updateurl.txt
 
-Additional files are also available: please note that these files are created by an [additional build](https://github.com/uazo/cromite/actions/workflows/build_additional_targets.yaml) separate from the release process, and therefore may not be immediately available.
+还提供其他文件：请注意，这些文件是由一个[附加构建](https://github.com/uazo/cromite/actions/workflows/build_additional_targets.yaml) 与发布过程分开创建的，因此可能不会立即可用。
 
-#### Cromite System WebView apk for android:
+#### Android的Cromite系统WebView apk：
 - arm64_SystemWebView.apk
 - x64_SystemWebView.apk
 
-#### Vanilla Chromium for android (used for tests):
+#### Android的Vanilla Chromium（用于测试）：
 - arm64_VanillaChromium.apk
 - arm_VanillaChromium.apk
 - x64_VanillaChromium.apk
 
-#### SystemWebView Shell (used for tests)
+#### SystemWebView Shell（用于测试）
 - arm64_SystemWebViewShell.apk
 - x64_SystemWebViewShell.apk
 
@@ -87,63 +85,65 @@ Additional files are also available: please note that these files are created by
 Official F-droid repo url:
 https://www.cromite.org/fdroid/repo/?fingerprint=49F37E74DEE483DCA2B991334FB5A0200787430D0B5F9A783DD5F13695E9517B
 
-### Auto-update in Android
+### Android中的自动更新
+您将通过自动更新功能自动收到有关新更新的通知（并能够安装它们）。在第一次启动时，系统会询问您是否要激活该功能。
 
-You will automatically receive notifications about new updates (and be able to install them) via the auto updater functionality.
-You will be asked whether you want to activate the functionality during the first start-up.
 
-### Auto-update setup for Windows
+### Windows的自动更新设置
 
-1. Download https://github.com/henrypp/chrlauncher/releases
-2. Create a `chrlauncher.ini`
+1. 下载 https://github.com/henrypp/chrlauncher/releases
+2. 创建一个 `chrlauncher.ini`
 
 ```
 [chrlauncher]
 
-# Custom Chromium update URL (string):
+# 自定义Chromium更新URL（字符串）：
 ChromiumUpdateUrl=https://github.com/uazo/cromite/releases/latest/download/updateurl.txt
 
-# Command line for Chromium (string):
-# note --user-data-dir= works better if path is absolute
-# See here: http://peter.sh/experiments/chromium-command-line-switches/
+# Chromium 的命令行（字符串）：
+# 注意 --user-data-dir= 使用绝对路径效果更好
+# 参见这里：http://peter.sh/experiments/chromium-command-line-switches/
 ChromiumCommandLine=--user-data-dir="C:\Users\<my user>\AppData\Local\Cromite\User Data" --no-default-browser-check
+k
 
-# to enable full logging in c:\temp\log.txt (daily rotate, no automatic deletion)
+# 在 c:\temp\log.txt 中启用完整日志记录（每日轮换，无自动删除）
 # ChromiumCommandLine=--enable-logging --v=0 --log-file=C:\temp\log.txt --user-data-dir=".\User Data" --no-default-browser-check
 
-# Chromium executable file name (string):
+# Chromium 可执行文件名（字符串）：
 ChromiumBinary=chrome.exe
 
-# Chromium binaries directory (string):
-# Relative (to chrlauncher directory) or full path (env. variables supported).
+# Chromium 二进制文件目录（字符串）：
+# 相对路径（相对于 chrlauncher 目录）或完整路径（支持环境变量）。
 ChromiumDirectory=.\bin
-```
-To prevent deletion by Microsoft Defender each time the browser is updated, check the `user-data-dir` folder by modifying it accordingly.
 
-### Enable network process sandbox in windows
-I don't include any setups because I don't like the experience of not knowing what they do, so you must manually run this command on first installation:
+```
+为了防止每次浏览器更新时被 Microsoft Defender 删除，请通过相应地修改 `user-data-dir` 文件夹进行检查。
+
+### 在 Windows 中启用网络进程沙箱
+
+我不包括任何设置，因为我不喜欢不知道它们的作用的体验，因此您必须在首次安装时手动运行此命令：
 ```
 cd <where_is_the_exe>
 icacls . /grant "*S-1-15-2-2:(OI)(CI)(RX)"
 ```
-see https://github.com/uazo/bromite-buildtools/issues/51
+请参阅 https://github.com/uazo/bromite-buildtools/issues/51
 
-### Enable AppContainer for renderer process in windows
-you can activate (highly recommended) the 'RendererAppContainer' flag from the command line with
+### 在 Windows 中启用渲染进程的 AppContainer  
+您可以通过命令行激活（强烈推荐）'RendererAppContainer' 标志，使用：
 ```
   --enable-features=RendererAppContainer
 ```
 
-### Auto-update setup for linux
-working in progress in https://github.com/uazo/cromite/issues/771
+### Linux 的自动更新设置  
+正在进行中，详细信息请参见 https://github.com/uazo/cromite/issues/771
 
-### Making Cromite work in Ubuntu 24.04 and its derivatives (kubuntu, etc)
-This happens because, starting with Ubuntu 24.04, Apparmor
-restricts the use of unprivileged user namespaces. To fix this, you have several options:
-#### 1. Creating an apparmor profile for cromite
-Create `/etc/apparmor.d/chrome`, and write:
+### 在 Ubuntu 24.04 及其衍生版（如 Kubuntu 等）中使 Cromite 工作  
+这发生的原因是，从 Ubuntu 24.04 开始，AppArmor 限制了对非特权用户命名空间的使用。要解决此问题，您有几个选项：
+#### 1. 为 Cromite 创建一个 AppArmor 配置文件  
+创建 `/etc/apparmor.d/chrome`，并写入：
 ```
 abi <abi/4.0>,
+```
 include <tunables/global>
 
 profile cromite /home/user/cromite/chrome-lin/chrome flags=(unconfined) {
@@ -152,44 +152,45 @@ profile cromite /home/user/cromite/chrome-lin/chrome flags=(unconfined) {
   include if exists <local/chrome>
 }
 ```
-replacing the cromite binary path with where you have placed cromite.
+将 Cromite 二进制文件路径替换为您放置 Cromite 的位置。
 
-Now, run `sudo apparmor_parser -r /etc/apparmor.d/cromite` to apply the changes.
-#### 2. Disabling the restriction until next reboot
+现在，运行 `sudo apparmor_parser -r /etc/apparmor.d/cromite` 以应用更改。
+
+#### 2. 在下次重启之前禁用限制
 `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0`
-#### 3. Disabling the restriction permanently
-Add `kernel.apparmor_restrict_unprivileged_userns=0` to the file `/etc/sysctl.d/60-apparmor-namespace.conf`.  Create the file if not exists.
 
-# Contributing
+#### 3. 永久禁用限制
+将 `kernel.apparmor_restrict_unprivileged_userns=0` 添加到文件 `/etc/sysctl.d/60-apparmor-namespace.conf` 中。如果文件不存在，请创建它。
 
-Please submit issues following the issue template; beware that GitHub does not display the templates from mobile.
+# 贡献
 
-Patches are welcome and accepted if they match the project goals.
+请按照问题模板提交问题；请注意，GitHub 在移动设备上不显示模板。
 
-If you want to help me, [here](https://github.com/uazo/cromite/blob/master/docs/HELP_ME_PLEASE.md) is the list of things I would need.
+欢迎并接受与项目目标相符的补丁。
 
-For any usage or development discussion please use GitHub Discussions: https://github.com/uazo/cromite/discussions
+如果您想帮助我，[这里](https://github.com/uazo/cromite/blob/master/docs/HELP_ME_PLEASE.md) 是我需要的事项列表。
 
-# Credits
+有关任何使用或开发讨论，请使用 GitHub 讨论区：https://github.com/uazo/cromite/discussions
 
-* [Chromium project](https://www.chromium.org/Home) and developers
+# 致谢
+
+* [Chromium 项目](https://www.chromium.org/Home) 和开发者
 * [Bromite](https://github.com/bromite/bromite)
-  * [Iridium project](https://github.com/iridium-browser) for some patches
-  * [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) for some patches
-  * [ungoogled-chromium-android](https://github.com/ungoogled-software/ungoogled-chromium-android) for some patches
-  * [GrapheneOS](https://github.com/GrapheneOS) for some security patches
-  * [Inox patchset](https://github.com/gcarq/inox-patchset) for some patches (via ungoogled-chromium)
-  * [Brave Browser](https://github.com/brave/brave-core) for some patches
+  * [Iridium 项目](https://github.com/iridium-browser) 提供的一些补丁
+  * [ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) 提供的一些补丁
+  * [ungoogled-chromium-android](https://github.com/ungoogled-software/ungoogled-chromium-android) 提供的一些补丁
+  * [GrapheneOS](https://github.com/GrapheneOS) 提供的一些安全补丁
+  * [Inox 补丁集](https://github.com/gcarq/inox-patchset) 提供的一些补丁（通过 ungoogled-chromium）
+  * [Brave 浏览器](https://github.com/brave/brave-core) 提供的一些补丁
 
-thanks to [austinhuang0131](https://github.com/austinhuang0131) for the svg icon
+感谢 [austinhuang0131](https://github.com/austinhuang0131) 提供的 SVG 图标。
+# 捐赠
 
-# Donate
+如果您愿意，可以通过 [paypal](https://www.paypal.com/pools/c/9cwNgAQhRL) 捐赠以支持 Cromite 的开发。
 
-If you want, you can donate to support cromite development through [paypal](https://www.paypal.com/pools/c/9cwNgAQhRL).
+# 许可证
 
-# License
-
-Cromite is published under [GNU GPL v3](./LICENSE).
-The patches published as part of the Bromite project are released under GNU GPL v3 only.
-Cromite specific patches are under the GNU GPL-2+ licence.
-Each individual patch contains specific information on the licence used.
+Cromite 以 [GNU GPL v3](./LICENSE) 许可证发布。  
+作为 Bromite 项目一部分发布的补丁仅在 GNU GPL v3 许可证下发布。  
+Cromite 特定的补丁则在 GNU GPL-2+ 许可证下发布。  
+每个单独的补丁包含有关所使用许可证的具体信息。
